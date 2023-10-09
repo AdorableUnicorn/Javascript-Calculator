@@ -2,8 +2,6 @@
 
 This Javascript Calculator is a project created as a part of the certification requirements for the "Front End Development Libraries" course on FreeCodeCamp. 
 
-This project is an implementation of a JavaScript calculator, designed to meet the requirements of "Front End Development Libraries" certification project on FreeCodeCamp. The calculator is built using a mix of CSS, React and Bootstrap.
-
 ## Description
 
 The primary goal of this project is to create a fully functional calculator application. The app provides the following features:
