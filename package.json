@@ -1,6 +1,6 @@
 {
-  "homepage": "AdorableUnicorn.github.io/Javascript-Calculator,",
-  "name": "my-app2",
+  "homepage": "https://AdorableUnicorn.github.io/Javascript-Calculator",
+  "name": "react-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

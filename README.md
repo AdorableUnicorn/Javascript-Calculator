@@ -1,6 +1,6 @@
 # Javascript-Calculator
 
-This Javascript Calculator is a project created as a part of the certification requirements for the "Front End Development Libraries" course on FreeCodeCamp. 
+This Javascript Calculator is a project created as a part of the certification requirements for the "Front End Development Libraries" course on FreeCodeCamp.
 
 ## Description
 
