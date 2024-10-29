@@ -109,7 +109,7 @@ class Calculator extends React.Component {
         result: false,
       });
     } else if (array.some((x) => inpute.includes(x))) {
-      if (!inpute.includes("-") && el.target.value == "-") {
+      if (!inpute.includes("-") && el.target.value === "-") {
         return this.setState({
           opInput: inpute + operator,
           numInput: "0",
@@ -157,7 +157,7 @@ class Calculator extends React.Component {
       });
     }
     const newCount =
-      opCount.length != 0 ? count.slice(0, -1 * opCount.length) : count;
+      opCount.length !== 0 ? count.slice(0, -1 * opCount.length) : count;
     const result = Number.isInteger(eval(newCount))
       ? eval(newCount)
       : parseFloat(eval(newCount).toPrecision(4));
