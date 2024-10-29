@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/AdorableUnicorn.github.io/Javascript-Calculator/static/css/main.42331558.css",
-    "main.js": "/AdorableUnicorn.github.io/Javascript-Calculator/static/js/main.36c8c061.js",
-    "index.html": "/AdorableUnicorn.github.io/Javascript-Calculator/index.html",
-    "main.42331558.css.map": "/AdorableUnicorn.github.io/Javascript-Calculator/static/css/main.42331558.css.map",
-    "main.36c8c061.js.map": "/AdorableUnicorn.github.io/Javascript-Calculator/static/js/main.36c8c061.js.map"
+    "main.css": "/Javascript-Calculator/static/css/main.42331558.css",
+    "main.js": "/Javascript-Calculator/static/js/main.36c8c061.js",
+    "index.html": "/Javascript-Calculator/index.html",
+    "main.42331558.css.map": "/Javascript-Calculator/static/css/main.42331558.css.map",
+    "main.36c8c061.js.map": "/Javascript-Calculator/static/js/main.36c8c061.js.map"
   },
   "entrypoints": [
     "static/css/main.42331558.css",
