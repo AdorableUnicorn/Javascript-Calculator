@@ -1,5 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -230,5 +232,10 @@ class Calculator extends React.Component {
   }
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Calculator />);
+const root = createRoot(document.getElementById("root"));
+
+root.render(
+  <BrowserRouter basename="/Javascript-Calculator">
+    <Calculator />
+  </BrowserRouter>
+);
