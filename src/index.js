@@ -158,7 +158,7 @@ class Calculator extends React.Component {
     }
     const newCount =
       opCount.length !== 0 ? count.slice(0, -1 * opCount.length) : count;
-    const result = Number.isInteger(eval(newCount))
+    const result = Number.isInteger(eval(newCount)) //  eval used safely as input is limited to calculator buttons, minimizing security risks
       ? eval(newCount)
       : parseFloat(eval(newCount).toPrecision(4));
 
