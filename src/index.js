@@ -1,20 +1,23 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { evaluate } from "mathjs";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-const ButtonPrimary = "btn btn-outline-primary w-100";
-const ButtonInfo = "btn btn-outline-secondary w-100";
-const ButtonDanger = "btn btn-outline-danger w-100";
-const ButtonSuccess = "btn btn-outline-success w-100 h-100";
+const buttonStyle = {
+  buttonPrimary: "btn btn-outline-primary w-100",
+  buttonDanger: "btn btn-outline-danger w-100",
+  buttonInfo: "btn btn-outline-secondary w-100",
+  buttonSuccess: "btn btn-outline-success w-100 h-100",
+};
 
 function col(num) {
   return `col-${num} nopadding`;
 }
 
-function Button(value, id, action, clas = ButtonPrimary) {
+function Button(value, id, action, clas = buttonStyle.buttonPrimary) {
   return (
     <button
       type="button"
@@ -160,9 +163,9 @@ class Calculator extends React.Component {
     }
     const newCount =
       opCount.length !== 0 ? count.slice(0, -1 * opCount.length) : count;
-    const result = Number.isInteger(eval(newCount)) //  eval used safely as input is limited to calculator buttons, minimizing security risks
-      ? eval(newCount)
-      : parseFloat(eval(newCount).toPrecision(4));
+    const result = Number.isInteger(evaluate(newCount))
+      ? evaluate(newCount)
+      : parseFloat(evaluate(newCount).toPrecision(4));
 
     this.setState({
       count: "" + result,
@@ -184,13 +187,13 @@ class Calculator extends React.Component {
         </div>
         <div className="row">
           <div className={col(6)}>
-            {Button("AC", "clear", this.reset, ButtonDanger)}
+            {Button("AC", "clear", this.reset, buttonStyle.buttonDanger)}
           </div>
           <div className={col(3)}>
-            {Button("/", "divide", this.addToStack, ButtonInfo)}
+            {Button("/", "divide", this.addToStack, buttonStyle.buttonInfo)}
           </div>
           <div className={col(3)}>
-            {Button("*", "multiply", this.addToStack, ButtonInfo)}
+            {Button("*", "multiply", this.addToStack, buttonStyle.buttonInfo)}
           </div>
         </div>
         <div className="row">
@@ -198,7 +201,7 @@ class Calculator extends React.Component {
           <div className={col(3)}>{Button(8, "eight", this.addNum)}</div>
           <div className={col(3)}>{Button(9, "nine", this.addNum)}</div>
           <div className={col(3)}>
-            {Button("-", "subtract", this.addToStack, ButtonInfo)}
+            {Button("-", "subtract", this.addToStack, buttonStyle.buttonInfo)}
           </div>
         </div>
         <div className="row">
@@ -206,7 +209,7 @@ class Calculator extends React.Component {
           <div className={col(3)}>{Button(5, "five", this.addNum)}</div>
           <div className={col(3)}>{Button(6, "six", this.addNum)}</div>
           <div className={col(3)}>
-            {Button("+", "add", this.addToStack, ButtonInfo)}
+            {Button("+", "add", this.addToStack, buttonStyle.buttonInfo)}
           </div>
         </div>
         <div className="row">
@@ -219,12 +222,17 @@ class Calculator extends React.Component {
             <div className="row">
               <div className={col(8)}>{Button(0, "zero", this.addNum)}</div>
               <div className={col(4)}>
-                {Button(".", "decimal", this.addDecimal, ButtonInfo)}
+                {Button(
+                  ".",
+                  "decimal",
+                  this.addDecimal,
+                  buttonStyle.buttonInfo
+                )}
               </div>
             </div>
           </div>
           <div className={col(3)}>
-            {Button("=", "equals", this.equals, ButtonSuccess)}
+            {Button("=", "equals", this.equals, buttonStyle.buttonSuccess)}
           </div>
         </div>
       </div>
